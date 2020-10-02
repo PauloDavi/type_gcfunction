@@ -1,23 +1,11 @@
 {
-  "name": "gcf-typescript-template",
-  "version": "1.0.1",
-  "description": "A template for Google Cloud Functions project that uses Typescript.",
-  "repository": "golergka/gcf-typescript-template",
+  "name": "type_function",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npx tsc-watch --onSuccess 'npx @google-cloud/functions-framework --target=helloWorld'",
-    "deploy": "npx tsc && gcloud functions deploy helloWorld --runtime nodejs10 --trigger-http"
+    "start": "tsc-watch --onSuccess \"functions-framework --target=helloWorld\"",
+    "deploy": "tsc && gcloud functions deploy helloWorld --runtime nodejs10 --trigger-http"
   },
-  "keywords": [
-    "Typescript",
-    "Template",
-    "Google Cloud Functions",
-    "GCF",
-    "functions",
-    "serverless"
-  ],
-  "author": "Max Yankov aka golergka",
-  "license": "MIT",
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.1.2",
     "tsc-watch": "^2.2.1",
