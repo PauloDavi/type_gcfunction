@@ -23,9 +23,9 @@ Modelo de projeto com typescript para deploy no Google Cloud Function.
 Primeiro você precisa baixar e configurar o Google Cloud SDK. Crie um projeto e ative a API, instale o Google Cloud SDK e
 autorize seu IP. Você pode seguir a seção "Antes de começar" do link [Guia de início rápido](https://cloud.google.com/functions/docs/quickstart).
 
-Então clone esse repositório e rode o seguinte comando:
+Depois disso execute o seguinte comando:
 
-`git clone git@github.com:golergka/gcf-typescript-template && cd gcf-typescript-template && yarn`
+`git clone https://github.com/PauloDavi/type_gcfunction.git && cd type_gcfunction && yarn`
 
 ## Start e Deploying
 
@@ -52,7 +52,7 @@ Se você precisar de suporte a mais de uma função em um único repositório, p
 
 ## Como funciona
 
-`tsconfig.json` configura o compilador Typescript para traspilar a pasta` src` e envia os arquivos Javascript compilados para a pasta `dist`. `package.json` especifica o arquivo `dist/index.js` como um ponto de entrada para o aplicativo. A pasta `dist` é adicionada ao arquivo` .gitignore`, uma vez que esses arquivos js não precisão ser mandados para o github. No entanto, um arquivo `.gcloudignore` (que funciona da mesma maneira que .gitignore, mas para a ferramenta gcloud) não inclui a pasta `dist` na lista de ignorados, porque é necessário fazer upload desses arquivos js e usá-los para executar seu projeto.
+`tsconfig.json` configura o compilador Typescript para traspilar a pasta` src` e envia os arquivos Javascript compilados para a pasta `dist`. `package.json` especifica o arquivo `dist/index.js` como um ponto de entrada para o aplicativo. A pasta `dist` é adicionada ao arquivo` .gitignore`, uma vez que esses arquivos js não precisam ser mandados para o github. No entanto, um arquivo `.gcloudignore` (que funciona da mesma maneira que .gitignore, mas para a ferramenta gcloud) não inclui a pasta `dist` na lista de ignorados, porque é necessário fazer upload desses arquivos js e usá-los para executar seu projeto.
 
 Para teste local, `functions-framework` e `tsc-watch` são usados.
 
