@@ -16,10 +16,16 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc-watch --onSuccess \"functions-framework --target=helloWorld\"",
-    "deploy": "tsc && gcloud functions deploy helloWorld --runtime nodejs10 --trigger-http"
+    "deploy": "tsc && gcloud functions deploy helloWorld --runtime nodejs10 --trigger-http --env-vars-file=env.yaml",
+    "test": "jest"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.1.2",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.4.1",
     "tsc-watch": "^2.2.1",
     "typescript": "^3.5.3"
   }

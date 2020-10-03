@@ -11,6 +11,7 @@
   <a href="#start-e-deploying">Start e Deploying</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#modificações">Modificações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#como-funciona">Como funciona</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#testes">Testes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#créditos">Créditos</a>
 </p>
 
@@ -47,14 +48,19 @@ Você provavelmente vai querer mudar o nome da função de `helloWorld` para alg
 
 1. `index.ts`, na exportação
 2. **start** e **deploy** scripts no arquivo `package.json`
+3. Você também pode modificar o arquivo `env.yaml`, esse é o arquivo que vai setar as variáveis de ambiente no google cloud functions, e lembre de renomear o arquivo .env.example para .env, esse aquivo é utilizado para setar as variáveis de ambiente na sua maquina local
 
 Se você precisar de suporte a mais de uma função em um único repositório, precisará criar scripts para teste e implantação local por conta própria.
 
 ## Como funciona
 
-`tsconfig.json` configura o compilador Typescript para traspilar a pasta` src` e envia os arquivos Javascript compilados para a pasta `dist`. `package.json` especifica o arquivo `dist/index.js` como um ponto de entrada para o aplicativo. A pasta `dist` é adicionada ao arquivo` .gitignore`, uma vez que esses arquivos js não precisam ser mandados para o github. No entanto, um arquivo `.gcloudignore` (que funciona da mesma maneira que .gitignore, mas para a ferramenta gcloud) não inclui a pasta `dist` na lista de ignorados, porque é necessário fazer upload desses arquivos js e usá-los para executar seu projeto.
+`tsconfig.json` configura o compilador Typescript para traspilar a pasta `./src` e envia os arquivos Javascript compilados para a pasta `./dist`, o `package.json` especifica o arquivo `./dist/index.js` como um ponto de entrada para o aplicativo. A pasta `./dist` é adicionada ao arquivo`.gitignore`, uma vez que esses arquivos js não precisam ser mandados para o github. No entanto, um arquivo `.gcloudignore` (que funciona da mesma maneira que `.gitignore`, mas para a ferramenta gcloud) não inclui a pasta `./dist` na lista de ignorados, porque é necessário fazer upload desses arquivos js e usá-los para executar seu projeto.
 
 Para teste local, `functions-framework` e `tsc-watch` são usados.
+
+## Testes
+
+Faça seus testes automatizados na pasta `./tests`, os testes utilizam a biblioteca jest. Os testes sempre devem terminar com **.spec.ts** para que o jest entenda que eles são testes.
 
 ### Créditos
 

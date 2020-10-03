@@ -9,3 +9,11 @@ yarn.lock
 
 node_modules
 src
+README.md
+
+jest.config.js
+tests
+
+.env
+.env.example
+env.yaml
